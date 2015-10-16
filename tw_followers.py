@@ -22,7 +22,7 @@ __author__ = "Markus Koskinen"
 __license__ = "BSD"
 
 def syntax(execname):
-    print("Syntax: %s")
+    print("Syntax: %s" % execname)
     sys.exit(1)
 
 def auth():
