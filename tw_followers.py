@@ -26,10 +26,10 @@ def syntax(execname):
     sys.exit(1)
 
 def auth():
-    api = twitter.Api(consumer_key = CONSUMER_KEY,
-              consumer_secret = CONSUMER_SECRET,
-              access_token_key = ACCESS_TOKEN_KEY,
-              access_token_secret = ACCESS_TOKEN_SECRET)
+    api = twitter.Api(consumer_key=CONSUMER_KEY,
+                      consumer_secret=CONSUMER_SECRET,
+                      access_token_key=ACCESS_TOKEN_KEY,
+                      access_token_secret=ACCESS_TOKEN_SECRET)
 
     try:
         creds = api.VerifyCredentials()
@@ -49,10 +49,10 @@ def fetch_followers(api):
         try:
             followers = api.GetFollowerIDs(screen_name=USER_NAME, stringify_ids=False)
         except Exception as e:
-            print("Rate limited. Sleeping 60s. (%s)" % e);
+            print("Rate limited. Sleeping 60s. (%s)" % e)
             time.sleep(60)
         else:
-            success = True;
+            success = True
     return followers
 
 def main():
@@ -70,7 +70,7 @@ def main():
     return
 
 if __name__ == "__main__":
-   if len(sys.argv) != 1:
-      syntax(sys.argv[0])
+    if len(sys.argv) != 1:
+        syntax(sys.argv[0])
 
-   main()
+    main()
